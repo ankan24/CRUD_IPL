@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURD</title>
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<style>
+    .wrapper {
+        height: 100%;
+        width: 100%;
+        background-image: url('https://wallpapercave.com/wp/wp4059913.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="ui massive menu">
+            <div class="ui container">
+                <div class="item"><a href="/" class="link">Home</a></div>
+                <div class="item"> Blog </div>
+                <div class="item"> Contact </div>
+                <div class="item"> About </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="ui container">
+            <form action="/edit/<%- club._id %>" class="ui form" method="post">
+                <div class="ui three fields">
+                    <div class="field">
+                        <label for="name" class="ui header green">Enter the team name</label>
+                        <input type="text" name="name" value="<%- club.name %>">
+                    </div>
+                    <div class="field">
+                        <label for="players" class="ui header green">Enter the player name</label>
+                        <input type="text" name="players" value="<%- club.players %>">
+                    </div>
+                    <div class="field">
+                        <label for="coach" class="ui header green">Enter the coach name</label>
+                        <input type="text" name="coach" value="<%- club.coach %>">
+                    </div>
+                </div>
+                <div class="ui fluid field">
+                    <input type="submit" value="Submit" class="ui button green fluid">
+                </div>
+            </form>
+            <br><br>
+        </div>
+    </div>
+
+    <script src="/js/semantic.min.js"></script>
+</body>
+
+</html>
