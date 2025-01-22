@@ -18,9 +18,9 @@ mongoose.connect('mongodb+srv://demouser:demo123@cluster0.ap4zayq.mongodb.net/IP
 }).then(()=>console.log('Connect to Mongoose server')
 ).catch(()=>console.log('Error connecting to Mongoose server'))
 
+const PORT = process.env.PORT || 3000;
 
-
-app.listen(3000,(err)=>{
+app.listen(PORT,(err)=>{
     if(err) throw err;
-    console.log('Server is running on port 3000');
+    console.log('Server is running on port');
 })
