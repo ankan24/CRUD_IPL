@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose'); 
 const bodyParser = require('body-parser');
 const serverless = require("serverless-http");
+require('dotenv').config(); 
 
 const homeRoute = require('./routes/home.route.js') 
 const blogRoute = require('./routes/blog.route.js')
@@ -26,7 +27,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(()=>console.log('Connect to Mongoose server')
-).catch(()=>console.log('Error connecting to Mongoose server'))
+).catch((err)=>console.log('Error connecting to Mongoose server',err))
 
 
 
