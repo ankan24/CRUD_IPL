@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Club = require('../models/Club.js');
+const Club = require('../models/Club.model.js');
 
 
 router.get('/', async (req, res, next) => {

@@ -24,9 +24,9 @@
         <div class="ui massive menu">
             <div class="ui container">
                 <div class="item"><a href="/" class="link">Home</a></div>
-                <div class="item"> Blog </div>
-                <div class="item"> Contact </div>
-                <div class="item"> About </div>
+                <div class="item"><a href="/blog" class="link">Blog</a></div>
+                <div class="item"><a href="/contact" class="link">Contact</a></div>
+                <div class="item"><a href="/about" class="link">About</a></div>
             </div>
         </div>
         <br><br><br>
@@ -34,20 +34,20 @@
             <form action="/edit/<%- club._id %>" class="ui form" method="post">
                 <div class="ui three fields">
                     <div class="field">
-                        <label for="name" class="ui header green">Enter the team name</label>
+                       <h3><label for="name" class="ui header  blue">Enter the team name</label></h3> 
                         <input type="text" name="name" value="<%- club.name %>">
                     </div>
                     <div class="field">
-                        <label for="players" class="ui header green">Enter the player name</label>
+                        <h3><label for="players" class="ui header blue">Enter the player name</label></h3> 
                         <input type="text" name="players" value="<%- club.players %>">
                     </div>
                     <div class="field">
-                        <label for="coach" class="ui header green">Enter the coach name</label>
+                        <h3> <label for="coach" class="ui header  blue">Enter the coach name</label></h3> 
                         <input type="text" name="coach" value="<%- club.coach %>">
                     </div>
-                </div>
+                </div>  
                 <div class="ui fluid field">
-                    <input type="submit" value="Submit" class="ui button green fluid">
+                    <input type="submit" value="Submit" class="ui button blue fluid">
                 </div>
             </form>
             <br><br>
