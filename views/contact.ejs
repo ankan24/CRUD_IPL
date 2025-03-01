@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,55 +7,56 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
+            background-color: #f4f4f4;
+            text-align: center;
         }
 
         header {
             background-color: #007bff;
             color: white;
-            padding: 15px;
+            padding: 20px;
             font-size: 24px;
-            text-align: center;
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .container {
-            background-color: #fff;
+            width: 80%;
+            margin: 20px auto;
+            background: white;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 400px;
-            margin-top: 30px;
-            text-align: center;
+            text-align: left;
+        }
+
+        .section {
+            margin-bottom: 20px;
         }
 
         h2 {
-            margin-bottom: 20px;
-            color: #333;
+            color: #007bff;
         }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-            text-align: left;
+        p, label {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            padding: 15px;
+            background: #e3f2fd;
+            border-left: 5px solid #007bff;
+            border-radius: 5px;
         }
 
         input[type="text"],
         textarea {
             width: 100%;
             padding: 10px;
-            margin-bottom: 15px;
+            margin-top: 5px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
             box-sizing: border-box;
             font-size: 16px;
         }
@@ -68,57 +68,81 @@
 
         .btn-container {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            flex-wrap: wrap;
             gap: 10px;
+            margin-top: 15px;
         }
 
         button {
             background-color: blue;
             color: white;
-            padding: 12px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
-            width: 100%;
             font-size: 16px;
             transition: background 0.3s;
+            flex: 1;
+            min-width: 120px;
         }
 
         button:hover {
-            background-color: rgb(2, 2, 159);
+            background-color: darkblue;
         }
 
         button a {
             color: white;
             text-decoration: none;
             display: block;
-            width: 100%;
-            height: 100%;
         }
 
+        .redirect-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .redirect-button:hover {
+            background-color: darkblue;
+        }
     </style>
 </head>
-
 <body>
+
     <header>🏏 Contact Us - My IPL Team Editor</header>
+    <button class="redirect-button" onclick="window.location.href='/'">Go Home</button>
 
     <div class="container">
-        <h2>Contact Form</h2>
-        <form>
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Enter your name">
+        <div class="section">
+            <h2>Get in Touch</h2>
+            <p>If you have any questions, feedback, or issues, feel free to reach out to us.</p>
+        </div>
 
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Type your message here..."></textarea>
+        <div class="section contact-form">
+            <h2>Contact Form</h2>
+            <form>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Enter your name">
 
-            <div class="btn-container">
-                <button id="call"><a href="tel:+1234567890">📞 Call Us</a></button>
-                <button id="mail"><a href="mailto:support@iplteam.com">📧 Mail Us</a></button>
-                <button id="chat"><a href="https://wa.me/1234567890">💬 Chat with Us</a></button>
-            </div>
-        </form>
+                <label for="message">Your Message</label>
+                <textarea id="message" placeholder="Type your message here..."></textarea>
+
+                <div class="btn-container">
+                    <button id="call"><a href="tel:+1234567890">📞 Call Us</a></button>
+                    <button id="mail"><a href="mailto:support@iplteam.com">📧 Mail Us</a></button>
+                    <button id="chat"><a href="https://wa.me/1234567890">💬 Chat with Us</a></button>
+                </div>
+            </form>
+        </div>
     </div>
 
 </body>
-
 </html>
