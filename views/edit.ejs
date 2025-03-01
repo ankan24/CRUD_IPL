@@ -4,58 +4,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CURD</title>
-    <link rel="stylesheet" href="/css/semantic.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <title>Edit Team</title>
+
+    <style>
+        /* Reset Default Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url('https://wallpapercave.com/wp/wp4059913.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 30px;
+        }
+
+        .navbar img {
+            width: 100px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1e90ff;
+        }
+
+        /* Container */
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 8px;
+            width: 80%;
+            margin: 40px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+            margin-bottom: 10px;
+            color: #1e90ff;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #005bbb;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                margin-top: 10px;
+            }
+
+            .nav-links a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .container {
+                width: 95%;
+            }
+
+            input, .btn {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
-<style>
-    .wrapper {
-        height: 100%;
-        width: 100%;
-        background-image: url('https://wallpapercave.com/wp/wp4059913.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-</style>
 
 <body>
-    <div class="wrapper">
-        <div class="ui massive menu">
-            <div class="ui container">
-                <div><a href="https://www.iplt20.com/"><img src="https://imgs.search.brave.com/Scpvwk_pzgaevLd8d33XbWZZqBA2GAaGZVM9VUYc4j8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzhmL2Fh/LzU1LzhmYWE1NWQ4/ZDRjNWUwNzg5Mjlm/MWIwZjBmOTdkZTc5/LmpwZw" style=" width:100px;" alt=""></a></div>
-                <div class="item"><a href="/" class="link">Home</a></div>
-                <div class="item"><a href="/blog" class="link">Blog</a></div>
-                <div class="item"><a href="/contact" class="link">Contact</a></div>
-                <div class="item"><a href="/about" class="link">About</a></div>
-            </div>
-        </div>
-        <br><br><br>
-        <div class="ui container">
-            <form action="/edit/<%- club._id %>" class="ui form" method="post">
-                <div class="ui three fields">
-                    <div class="field">
-                       <h3><label for="name" class="ui header  blue">Enter the team name</label></h3> 
-                        <input type="text" name="name" value="<%- club.name %>">
-                    </div>
-                    <div class="field">
-                        <h3><label for="players" class="ui header blue">Enter the player name</label></h3> 
-                        <input type="text" name="players" value="<%- club.players %>">
-                    </div>
-                    <div class="field">
-                        <h3> <label for="coach" class="ui header  blue">Enter the coach name</label></h3> 
-                        <input type="text" name="coach" value="<%- club.coach %>">
-                    </div>
-                </div>  
-                <div class="ui fluid field">
-                    <input type="submit" value="Submit" class="ui button blue fluid">
-                </div>
-            </form>
-            <br><br>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="https://www.iplt20.com/">
+            <img src="https://imgs.search.brave.com/Scpvwk_pzgaevLd8d33XbWZZqBA2GAaGZVM9VUYc4j8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzhmL2Fh/LzU1LzhmYWE1NWQ4/ZDRjNWUwNzg5Mjlm/MWIwZjBmOTdkZTc5/LmpwZw" alt="IPL Logo">
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">Contact</a>
+            <a href="/about">About</a>
         </div>
     </div>
 
-    <script src="/js/semantic.min.js"></script>
+    <!-- Main Container -->
+    <div class="container">
+        <form action="/edit/<%- club._id %>" method="post">
+            <div class="form-group">
+                <h3>Enter the team name</h3>
+                <input type="text" name="name" value="<%- club.name %>" required>
+            </div>
+            <div class="form-group">
+                <h3>Enter the player name</h3>
+                <input type="text" name="players" value="<%- club.players %>" required>
+            </div>
+            <div class="form-group">
+                <h3>Enter the coach name</h3>
+                <input type="text" name="coach" value="<%- club.coach %>" required>
+            </div>
+            <button type="submit" class="btn">Update</button>
+        </form>
+    </div>
 </body>
 
 </html>
